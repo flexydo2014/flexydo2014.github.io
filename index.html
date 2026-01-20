@@ -1,326 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <title>GSignatureTech | IT Services, Networking, Solar & Web Design</title>
-  <meta name="description" content="GSignatureTech provides computer sales & repair, network setup, website design, solar energy installation, server administration, and Microsoft 365 email services in Nigeria." />
-  <meta name="keywords" content="IT Services Nigeria, Computer Repair, Network Setup, Solar Installation, Website Design, Server Administration, Microsoft 365" />
+<title>GSignatureTech | IT, Networking, Solar & Web Solutions</title>
 
-  <style>
-    :root {
-      --bg: #0b1220;
-      --card: #121a2f;
-      --text: #e5e7eb;
-      --accent: #22c55e;
-      --accent2: #38bdf8;
-    }
+<style>
+:root {
+  --bg:#0b1220;
+  --card:#121a2f;
+  --text:#e5e7eb;
+  --accent:#22c55e;
+  --accent2:#38bdf8;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #0f172a, #020617);
-    }
+/* HEADER */
+header{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#0f172a,#020617);
+}
 
-    .logo {
-      font-size: 2.2em;
-      font-weight: bold;
-      color: var(--accent);
-    }
+header img{
+  max-width:230px;
+}
 
-    nav {
-      text-align: center;
-      padding: 12px;
-      background: #020617;
-      position: sticky;
-      top: 0;
-    }
+header p{
+  margin-top:10px;
+  font-size:1.05em;
+}
 
-    nav a {
-      color: var(--text);
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* NAV */
+nav{
+  background:#020617;
+  padding:12px;
+  text-align:center;
+  position:sticky;
+  top:0;
+}
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
-    }
+nav a{
+  color:var(--text);
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    h2 { color: var(--accent2); }
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+h2{
+  color:var(--accent2);
+}
 
-    .card { perspective: 1000px; cursor: pointer; }
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 220px;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-    .card.flip .card-inner { transform: rotateY(180deg); }
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      background: var(--card);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-    .card-back {
-      transform: rotateY(180deg);
-      font-size: 0.95em;
-      color: #d1d5db;
-    }
+/* GRID & CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #000;
-      padding: 12px 22px;
-      border-radius: 25px;
-      text-decoration: none;
-      margin-top: 15px;
-      font-weight: bold;
-    }
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.4);
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      font-size: 0.9em;
-    }
+/* COUNTER */
+.counter-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+}
 
-    /* WhatsApp Floating Button */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
+.counter-box{
+  padding:30px 20px;
+  text-align:center;
+}
 
-    iframe { border-radius: 10px; }
+.counter-box.divider{
+  border-left:1px solid rgba(255,255,255,.15);
+}
 
-    /* Carousel */
-    .carousel { position: relative; height: 380px; overflow: hidden; }
-    .slides {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .slides.active { opacity: 1; }
-    .slide-content {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
-      background: rgba(0,0,0,0.55);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-    }
+.counter-box h3{
+  font-size:2.4em;
+  margin:0;
+  color:var(--accent);
+}
 
-  </style>
+.counter-box p{
+  margin-top:8px;
+  font-size:.95em;
+}
+
+/* CAROUSEL */
+.carousel{
+  position:relative;
+  height:380px;
+  overflow:hidden;
+}
+
+.slides{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s;
+}
+
+.slides.active{
+  opacity:1;
+}
+
+.slide-content{
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  background:rgba(0,0,0,.55);
+  padding:20px;
+  border-radius:10px;
+  max-width:400px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  font-size:.9em;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap;">
-    <div style="width:100%; text-align:center; margin-bottom:15px;">
-      <img src="gst-logo.png" alt="GSignatureTech Logo" style="max-width:220px; height:auto;" />
-    </div>
-    <div style="background:rgba(0,0,0,0.5); padding:15px 20px; border-radius:10px; max-width:320px; text-align:right;">
-      <p style="margin:0; font-weight:bold; color:#22c55e;">Contact Us</p>
-      <p style="margin:5px 0;">📞 08062959109</p>
-      <p style="margin:5px 0;">✉️ flexydo2014@gmail.com</p>
-      <p style="margin:5px 0; font-size:0.9em;">📍 1, Balogun Street,<br>Off Oyarinu, Ketu Alapere, Lagos</p>
-    </div>
-  </div>
-  <p style="margin-top:10px; font-size:1.05em;">IT Services • Networking • Solar • Web Solutions</p>
-  <a href="#contact" class="btn">Request a Quote</a>
+  <img src="gst-logo.png" alt="GSignatureTech Logo">
+  <p>IT Services • Networking • Solar • Web Solutions</p>
 </header>
 
 <nav>
   <a href="#about">About</a>
   <a href="#services">Services</a>
-  <a href="#pricing">Pricing</a>
+  <a href="#counter">Stats</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- Image Carousel -->
+<!-- CAROUSEL -->
 <div class="carousel">
   <div class="slides active" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1400&q=80')">
     <div class="slide-content">
       <h2>Laptop Sales & Repair</h2>
-      <p>Quality laptops, repairs, upgrades, and professional support</p>
+      <p>Quality laptops, repairs & upgrades</p>
     </div>
   </div>
+
   <div class="slides" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80')">
     <div class="slide-content">
       <h2>Networking & Microsoft 365</h2>
-      <p>Secure networks and professional email administration</p>
+      <p>Secure business networks</p>
     </div>
   </div>
-  <div class="slides" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80')">
-    <div class="slide-content">
-      <h2>Website Design</h2>
-      <p>Modern, responsive websites for businesses</p>
-    </div>
-  </div>
+
   <div class="slides" style="background-image:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=80')">
     <div class="slide-content">
       <h2>Solar Energy Solutions</h2>
-      <p>Clean, reliable solar and inverter installations</p>
+      <p>Clean & reliable power</p>
     </div>
   </div>
 </div>
 
-
 <section id="about">
   <h2>About GSignatureTech</h2>
   <p>
-    GSignatureTech delivers reliable and affordable technology solutions for individuals and businesses. 
-    Our mission is to provide secure, efficient, and scalable IT, power, and digital services tailored to client needs.
+    GSignatureTech provides reliable IT, networking, solar and web solutions
+    for individuals and businesses across Nigeria.
   </p>
 </section>
 
 <section id="services">
   <h2>Our Services</h2>
   <div class="grid">
-
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="card-inner">
-        <div class="card-front"><h3>Laptop Sales & Repair</h3><p>Sales & professional laptop repair</p></div>
-        <div class="card-back"><p>We sell quality laptops and provide diagnostics, hardware repairs, OS installation, SSD/RAM upgrades, and preventive maintenance.</p></div>
-      </div>
-    </div>
-
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="card-inner">
-        <div class="card-front"><h3>Network Setup</h3><p>Secure wired & wireless networks</p></div>
-        <div class="card-back"><p>LAN/WAN design, router & switch configuration, firewall setup, and internet optimization for homes and offices.</p></div>
-      </div>
-    </div>
-
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="card-inner">
-        <div class="card-front"><h3>Website Design</h3><p>Modern business websites</p></div>
-        <div class="card-back"><p>Responsive websites, landing pages, SEO-friendly structure, and business branding.</p></div>
-      </div>
-    </div>
-
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="card-inner">
-        <div class="card-front"><h3>Solar Energy Installation</h3><p>Reliable power solutions</p></div>
-        <div class="card-back"><p>Solar panels, inverters, batteries, load assessment, and energy optimization solutions.</p></div>
-      </div>
-    </div>
-
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="card-inner">
-        <div class="card-front"><h3>Server Administration</h3><p>Enterprise IT management</p></div>
-        <div class="card-back"><p>Windows Server setup, Active Directory, backups, monitoring, and security hardening.</p></div>
-      </div>
-    </div>
-
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="card-inner">
-        <div class="card-front"><h3>Microsoft Email Admin</h3><p>Microsoft 365 services</p></div>
-        <div class="card-back"><p>Email setup, migration, spam protection, user management, and security policies.</p></div>
-      </div>
-    </div>
-
+    <div class="card"><h3>Laptop Sales & Repair</h3></div>
+    <div class="card"><h3>Network Setup</h3></div>
+    <div class="card"><h3>Website Design</h3></div>
+    <div class="card"><h3>Solar Installation</h3></div>
+    <div class="card"><h3>Server Administration</h3></div>
+    <div class="card"><h3>Microsoft 365</h3></div>
   </div>
 </section>
 
+<!-- COUNTER SECTION -->
 <section id="counter">
-  <div class="grid">
-    <div class="card"><h2 id="c1">0</h2><p>Clients Served</p></div>
-    <div class="card"><h2 id="c2">0</h2><p>Laptops Repaired</p></div>
-    <div class="card"><h2 id="c3">0</h2><p>Projects Completed</p></div>
-    <div class="card"><h2 id="c4">0</h2><p>Years Experience</p></div>
-  </div>
-</section>
+  <div class="counter-grid">
+    <div class="counter-box">
+      <h3><span class="count" data-target="150">0</span>+</h3>
+      <p>Laptops Repaired</p>
+    </div>
 
-<section id="pricing">
-  <h2>Service Pricing (Starting From)</h2>
-  <div class="grid">
-    <div class="card"><h3>Computer Repair</h3><p>₦15,000+</p></div>
-    <div class="card"><h3>Network Setup</h3><p>₦50,000+</p></div>
-    <div class="card"><h3>Website Design</h3><p>₦80,000+</p></div>
-    <div class="card"><h3>Solar Installation</h3><p>₦250,000+</p></div>
-    <div class="card"><h3>Server Administration</h3><p>₦120,000+</p></div>
-    <div class="card"><h3>Microsoft 365</h3><p>₦40,000+</p></div>
+    <div class="counter-box divider">
+      <h3><span class="count" data-target="80">0</span>+</h3>
+      <p>Networks Deployed</p>
+    </div>
+
+    <div class="counter-box divider">
+      <h3><span class="count" data-target="40">0</span>+</h3>
+      <p>Websites Designed</p>
+    </div>
+
+    <div class="counter-box divider">
+      <h3><span class="count" data-target="25">0</span>+</h3>
+      <p>Solar Installations</p>
+    </div>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p><strong>Email:</strong> flexydo2014@gmail.com</p>
-  <p><strong>Phone / WhatsApp:</strong> 08062959109</p>
-
-  <!-- Google Form -->
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMYFORM/viewform?embedded=true" width="100%" height="500"></iframe>
+  <p>Email: flexydo2014@gmail.com</p>
+  <p>Phone / WhatsApp: 08062959109</p>
 </section>
 
 <footer>
-  <p>© 2026 GSignatureTech. All Rights Reserved.</p>
+  © 2026 GSignatureTech. All Rights Reserved.
 </footer>
 
-<a class="whatsapp" href="https://wa.me/2348062959109" target="_blank">Chat on WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/2348062959109" target="_blank">
+  Chat on WhatsApp
+</a>
 
 <script>
-  let index = 0;
-  const slides = document.querySelectorAll('.slides');
-  setInterval(() => {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-  }, 5000);
-  const counters = [
-    { id: 'c1', target: 150 },
-    { id: 'c2', target: 300 },
-    { id: 'c3', target: 120 },
-    { id: 'c4', target: 8 }
-  ];
+/* SLIDER */
+let index=0;
+const slides=document.querySelectorAll('.slides');
+setInterval(()=>{
+  slides[index].classList.remove('active');
+  index=(index+1)%slides.length;
+  slides[index].classList.add('active');
+},5000);
 
-  counters.forEach(c => {
-    let count = 0;
-    const el = document.getElementById(c.id);
-    const interval = setInterval(() => {
-      count++;
-      el.textContent = count;
-      if (count >= c.target) clearInterval(interval);
-    }, 20);
-  });
+/* COUNTER */
+const counters=document.querySelectorAll('.count');
+counters.forEach(counter=>{
+  const update=()=>{
+    const target=+counter.dataset.target;
+    const current=+counter.innerText;
+    const inc=Math.ceil(target/100);
+    if(current<target){
+      counter.innerText=current+inc;
+      setTimeout(update,30);
+    }else{
+      counter.innerText=target;
+    }
+  };
+  update();
+});
 </script>
 
 </body>
